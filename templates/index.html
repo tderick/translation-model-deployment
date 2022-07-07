@@ -30,8 +30,12 @@
             <label for="from"> From</label>
 
             <select name="source_lang">
-              <option value="en">english</option>
-              <option value="deu">deutch</option>
+              <option {% if source_lang=="en" %}selected{%endif%} value="en">
+                english
+              </option>
+              <option {% if source_lang=="deu" %}selected{%endif%} value="deu">
+                deutch
+              </option>
             </select>
           </div>
           <div class="form-group">
@@ -60,8 +64,12 @@
             <label for="from"> To</label>
 
             <select name="dest_lang">
-              <option value="deu">deutch</option>
-              <option value="en">english</option>
+              <option {% if dest_lang=="en" %}selected{%endif%} value="en">
+                english
+              </option>
+              <option {% if dest_lang=="deu" %}selected{%endif%} value="deu">
+                deutch
+              </option>
             </select>
           </div>
           <div class="form-group">

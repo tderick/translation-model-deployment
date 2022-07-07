@@ -45,4 +45,6 @@ def make_translation(source_lang, dest_lang, input_text):
         encode_input = encode_sequences(model_parameters['gho_tokenizer'], model_parameters["gho_length"], input_text)
         translated = predict_sequence(model,model_parameters["fren_tokenizer"], encode_input)
         return translated
+    else:
+        return input_text[0]
     

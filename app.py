@@ -25,7 +25,7 @@ def translate():
             
             translated = make_translation(source_lang, dest_lang, input_text)
 
-            return render_template('index.html', translated=translated, input_text=request.form['input_text'])
+            return render_template('index.html', translated=translated, input_text=request.form['input_text'],source_lang=source_lang, dest_lang=dest_lang)
     elif request.method == "GET":
         return render_template('index.html')
     
