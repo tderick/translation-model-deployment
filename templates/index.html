@@ -1,0 +1,82 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+<section id="contact">
+  <div class="section-content">
+    <h1 class="section-header">
+      <span
+        class="content-header wow fadeIn"
+        data-wow-delay="0.2s"
+        data-wow-duration="2s"
+      >
+        Translate</span
+      >
+      your text
+    </h1>
+    <h3>Write and click <b>TRANSLATE</b></h3>
+  </div>
+  <div class="contact-section">
+    <div class="container">
+      <form method="post" action="/translate">
+        <div class="col-md-6 form-line">
+          <div class="form-group">
+            <label for="from"> From</label>
+
+            <select name="source_lang">
+              <option value="en">english</option>
+              <option value="deu">deutch</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="original"
+              placeholder="Enter Your Text"
+              name="input_text"
+            >
+          {% if input_text %}
+          {{ input_text }}
+          {% endif %}
+          </textarea
+            >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="from"> To</label>
+
+            <select name="dest_lang">
+              <option value="deu">deutch</option>
+              <option value="en">english</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="translated"
+              placeholder="Translated text will be here"
+              disabled
+            >
+            {% if translated %}
+            {{ translated }}
+            {%endif%}
+          </textarea
+            >
+          </div>
+          <div>
+            <button type="submit" class="btn btn-default submit">
+              <i class="fa fa-globe" aria-hidden="true"></i> translate
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
