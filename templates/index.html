@@ -35,17 +35,24 @@
             </select>
           </div>
           <div class="form-group">
+            {% if input_text %}
             <textarea
               class="form-control"
               id="original"
               placeholder="Enter Your Text"
               name="input_text"
             >
-          {% if input_text %}
-          {{ input_text }}
-          {% endif %}
-          </textarea
+            {{ input_text }}
+            </textarea>
+            {% else %}
+            <textarea
+              class="form-control"
+              id="original"
+              placeholder="Enter Your Text"
+              name="input_text"
             >
+            </textarea>
+            {% endif %}
           </div>
         </div>
         <div class="col-md-6">
@@ -58,17 +65,24 @@
             </select>
           </div>
           <div class="form-group">
+            {% if translated %}
             <textarea
               class="form-control"
-              id="translated"
-              placeholder="Translated text will be here"
-              disabled
+              id="original"
+              placeholder="Enter Your Text"
+              name="input_text"
             >
-            {% if translated %}
             {{ translated }}
-            {%endif%}
-          </textarea
+            </textarea>
+            {% else %}
+            <textarea
+              class="form-control"
+              id="original"
+              placeholder="Enter Your Text"
+              name="input_text"
             >
+            </textarea>
+            {% endif %}
           </div>
           <div>
             <button type="submit" class="btn btn-default submit">
